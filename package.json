@@ -1,13 +1,19 @@
 {
-	"name": "deppy",
-	"description": "Simple dependency graph resolved.",
-	"keywords": [ "graph", "dependency" ],
-	"version": "0.0.1-alpha",
-	"author": "Mario Pareja <pareja.mario@gmail.com> (http://mariopareja.com)",
-	"homepage": "http://github.com/mpareja/node-deppy",
-	"engines": { "node": "*" },
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/mpareja/node-deppy.git"
-	}
+  "name": "deppy",
+  "description": "Simple dependency graph resolved.",
+  "keywords": [ "graph", "dependency" ],
+  "version": "0.0.1-alpha",
+  "author": "Mario Pareja <pareja.mario@gmail.com> (http://mariopareja.com)",
+  "homepage": "http://github.com/mpareja/node-deppy",
+  "engines": { "node": "*" },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mpareja/node-deppy.git"
+  },
+  "devDependencies": {
+    "should": "*",
+    "glob": "*",
+    "paprika": "*",
+    "jslint": "*"
+  }
 }
