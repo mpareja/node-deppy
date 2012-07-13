@@ -18,6 +18,7 @@ exports.create = function () {
 
         resolving[node] = true;
         var current = nodes[node];
+        if (!current) { throw new Error('Node not found: ' + node); }
         current.deps.forEach(function (dep) {
           resolveDeps(dep);
         });

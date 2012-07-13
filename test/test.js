@@ -75,6 +75,10 @@ describe('deppy', function () {
     function resolve() { d.resolve('a'); }
   });
 
-  it('cannot resolve node it does not know about');
+  it('cannot resolve node it does not know about', function () {
+    var d = deppy.create();
+    resolve.should.throw('Node not found: a');
+    function resolve() { d.resolve('a'); }
+  });
 });
 
