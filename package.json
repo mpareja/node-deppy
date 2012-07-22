@@ -1,6 +1,6 @@
 {
   "name": "deppy",
-  "description": "Simple dependency graph resolver.",
+  "description": "A simple dependency graph resolver.",
   "keywords": [ "graph", "dependency" ],
   "version": "0.0.1-alpha",
   "author": "Mario Pareja <pareja.mario@gmail.com> (http://mariopareja.com)",
