@@ -40,6 +40,8 @@ var p = new jake.PackageTask(pckg.name, pckg.version, function () {
   this.needTarGz = true;
   this.packageFiles.include([
     'package.json',
+    'LICENSE',
+    'README.md',
     'index.js',
     'test/*'
   ]);
