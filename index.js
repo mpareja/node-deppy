@@ -36,15 +36,25 @@ exports.create = function () {
       if (!alreadyResolved(node)) {
         throwIfCurrentlyResolving(node);
 
-        resolving[node] = true;
+        markAsBeingResolved(node);
+
         var current = nodes[node];
         if (!current) { throw new Error('Node not found: ' + node); }
         current.deps.forEach(function (dep) {
           resolveDeps(dep);
         });
-        resolved.push(node);
-        delete resolving[node];
+
+        markAsResolved(node);
       }
+    }
+
+    function markAsBeingResolved(node) {
+      resolving[node] = true;
+    }
+
+    function markAsResolved(node) {
+      resolved.push(node);
+      delete resolving[node];
     }
 
     function alreadyResolved(node) {
