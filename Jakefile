@@ -39,6 +39,7 @@ task('test', function () {
 var p = new jake.PackageTask(pckg.name, pckg.version, function () {
   this.needTarGz = true;
   this.packageFiles.include([
+    'package.json',
     'index.js',
     'test/*'
   ]);
@@ -48,7 +49,7 @@ desc('Publish the package to npm.');
 task('publish', ['package'], function () {
 	var arc = pckg.name + '-' + pckg.version + '.tar.gz';
 	console.log('Publishing pkg/' + arc + '.');
-	jake.exec(['npm publish pkg/' + arc], complete, {stdout: true});
+	jake.exec(['npm publish pkg/' + arc], complete, {stdout: true, stderr: true});
 }, { async: true });
 
 desc('Push changes up to GitHub repository.');
