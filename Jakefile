@@ -28,9 +28,10 @@ task('lint', function () {
 }, { async: true });
 
 task('test', function () {
-  console.log("Running tests...");
+  process.stdout.write("Running tests...");
   jake.exec(['mocha -R spec'], function () {
-    console.log('... testing complete.');
+    console.log('testing complete.');
+    complete();
   });
 }, { async: true });
 
@@ -47,14 +48,12 @@ desc('Publish the package to npm.');
 task('publish', ['package'], function () {
 	var arc = pckg.name + '-' + pckg.version + '.tar.gz';
 	console.log('Publishing pkg/' + arc + '.');
-	jake.exec(['npm publish pkg/' + arc], function () {
-		complete();
-	}, {stdout: true});
+	jake.exec(['npm publish pkg/' + arc], complete, {stdout: true});
 }, { async: true });
 
 desc('Push changes up to GitHub repository.');
 task('push', ['lint', 'test'], function () {
-  run('git', 'push', complete);
+  run('git', 'push', mycomplete);
 }, { async: true });
 
 task('default', ['lint', 'test']);
