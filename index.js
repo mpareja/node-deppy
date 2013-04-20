@@ -18,7 +18,15 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-exports.create = function () {
+
+var deppy, exports;
+if (exports) {
+  deppy = exports;
+} else {
+  deppy = window.deppy = {};
+}
+
+deppy.create = function () {
   var nodes = {};
   var instance = function (node, deps) {
     nodes[node] = {
