@@ -1,11 +1,16 @@
 {
   "name": "deppy",
   "description": "A simple dependency graph resolver.",
-  "keywords": [ "graph", "dependency" ],
+  "keywords": [
+    "graph",
+    "dependency"
+  ],
   "version": "0.0.1-alpha",
   "author": "Mario Pareja <pareja.mario@gmail.com> (http://mariopareja.com)",
   "homepage": "http://github.com/mpareja/node-deppy",
-  "engines": { "node": "*" },
+  "engines": {
+    "node": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/mpareja/node-deppy.git"
@@ -14,6 +19,7 @@
     "should": "*",
     "glob": "*",
     "paprika": "*",
-    "jslint": "*"
+    "jslint": "*",
+    "mocha": "~1.9.0"
   }
 }

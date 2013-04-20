@@ -29,7 +29,7 @@ task('lint', function () {
 
 task('test', function () {
   process.stdout.write("Running tests...");
-  jake.exec(['mocha -R spec'], function () {
+  jake.exec(['node node_modules/mocha/bin/mocha -R spec'], function () {
     console.log('testing complete.');
     complete();
   });
